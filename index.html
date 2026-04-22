@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NAZIGO CITY WIFI - Entertainment Portal</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background: #0f0f0f;
+        color: white;
+    }
+
+    /* LOGIN SCREEN */
+    #login {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(135deg, #000, #1a1a1a);
+    }
+
+    input {
+        padding: 12px;
+        width: 220px;
+        margin: 10px;
+        border: none;
+        border-radius: 6px;
+    }
+
+    button {
+        padding: 12px 20px;
+        background: #e50914;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #ff1b1b;
+    }
+
+    /* PORTAL */
+    #portal {
+        display: none;
+    }
+
+    header {
+        background: #e50914;
+        padding: 15px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    nav {
+        background: #1c1c1c;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    h2 {
+        color: #e50914;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .card {
+        background: #1f1f1f;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .notice {
+        text-align: center;
+        padding: 10px;
+        background: #111;
+        color: #aaa;
+        font-size: 12px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="login">
+    <h1>🎬 NAZIGO CITY WIFI</h1>
+    <p>Enter Voucher / Password</p>
+
+    <input type="password" id="pass" placeholder="Enter access code">
+    <button onclick="login()">CONNECT</button>
+
+    <p style="font-size:12px;color:#aaa;">Powered by Hotspot Entertainment System</p>
+</div>
+
+<!-- PORTAL PAGE -->
+<div id="portal">
+
+<header>🎬 NAZIGO CITY WIFI ENTERTAINMENT</header>
+
+<nav>
+    <a href="#action">Action</a>
+    <a href="#love">Love</a>
+    <a href="#horror">Horror</a>
+    <a href="#iptv">IPTV</a>
+</nav>
+
+<section id="action">
+<h2>🔥 Action Movies</h2>
+<div class="grid">
+<div class="card">John Wick</div>
+<div class="card">Avengers</div>
+<div class="card">Fast & Furious</div>
+</div>
+</section>
+
+<section id="love">
+<h2>❤️ Love Stories</h2>
+<div class="grid">
+<div class="card">Titanic</div>
+<div class="card">Notebook</div>
+<div class="card">Me Before You</div>
+</div>
+</section>
+
+<section id="horror">
+<h2>👻 Horror</h2>
+<div class="grid">
+<div class="card">The Conjuring</div>
+<div class="card">Annabelle</div>
+<div class="card">IT</div>
+</div>
+</section>
+
+<section id="iptv">
+<h2>📺 IPTV Live</h2>
+<div class="grid">
+<div class="card">Football Channels</div>
+<div class="card">Movie Channels</div>
+<div class="card">News Live</div>
+</div>
+</section>
+
+<div class="notice">
+⚡ Connected via NAZIGO CITY WIFI Entertainment System
+</div>
+
+</div>
+
+<script>
+function login(){
+    let p = document.getElementById("pass").value;
+
+    // SIMPLE DEMO PASSWORD (change this to voucher system later)
+    if(p === "1234"){
+        document.getElementById("login").style.display = "none";
+        document.getElementById("portal").style.display = "block";
+    } else {
+        alert("Invalid voucher!");
+    }
+}
+</script>
+
+</body>
+</html>
